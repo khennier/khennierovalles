@@ -1,19 +1,8 @@
-import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-function CartWidget(){
-    const [items, setItems]= useState(0);
+import React from 'react'
 
-    const sumarItem = ()=>{
-        setItems(items + 1)
-    }
-    const restarItem = ()=>{
-        if(items>0){
-            setItems(items-1)
-        }
-        else{
-            setItems(items+0)
-        }
-    }
+function CartWidget() {
+
+
     return(
         <div>
         <div className="Cart">
@@ -23,12 +12,8 @@ function CartWidget(){
                     <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                     <path d="M17 17h-11v-14h-2" />
                     <path d="M6 5l14 1l-1 7h-13" />
-                    </svg> ITEMS: {items}
+                    </svg> 
             </div>
-        <div className="botones">
-        <Button onClick={sumarItem}>AGREGAR ITEM AL CARRITO</Button>
-        <Button onClick={restarItem}>QUITAR ITEM DEL CARRITO</Button>
-        </div>
         </div>
     )
     

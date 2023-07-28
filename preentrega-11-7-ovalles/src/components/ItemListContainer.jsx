@@ -6,9 +6,11 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({ejemplo}) => {
   const [product, setProduct]= useState([])
+  const [loading, setLoading]= useState(false)
   const {categoryId}= useParams()
 
   useEffect(()=>{
+    setLoading(true)
     getProductos()
     .then((res) => {
       if(categoryId){
@@ -18,7 +20,14 @@ const ItemListContainer = ({ejemplo}) => {
       }
     })
     .catch((error)=> console.log(error))
+    .finally(()=> setLoading(false))
   },[categoryId])
+
+  if(loading) {
+    return(
+      <p>Cargando...</p>
+    )
+  }
 
 
 

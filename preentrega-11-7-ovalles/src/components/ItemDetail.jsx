@@ -1,13 +1,12 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import useCart from './Cart/useCart'
 
 
-
-const onAdd = (cantidad) => {
-    console.log (`compraste ${cantidad} productos`)
-  }
-
-const ItemDetail = ({producto}) => {
+function ItemDetail({producto}) {
+  const { onAdd } = useCart()
+  console.log (onAdd)
+  
   return (
     <div className='d-flex flex-column align-items-center'>
 

@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import Button from 'react-bootstrap/Button';
 
+
+
+
 const ItemCount = ({stock, onAdd}) => {
     const [items, setItems]= useState(1)
         const sumarItem = () => { 
@@ -23,7 +26,10 @@ const ItemCount = ({stock, onAdd}) => {
                 <Button disabled={items ===0} onClick={()=>onAdd(items)}>Comprar</Button>
             </div>
             </div>
+            
     )
+
+
     
 }
 

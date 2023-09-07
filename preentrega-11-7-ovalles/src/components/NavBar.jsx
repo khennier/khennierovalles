@@ -26,7 +26,7 @@ function NavBar() {
                 TODOS LOS PRODUCTOS
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link"><CartWidget /><div>{products.lenght}</div></Nav.Link>
+            <Nav.Link as={NavLink} to='/Cart.jsx'><CartWidget /><div>{products.length}</div></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

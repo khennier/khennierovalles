@@ -1,7 +1,12 @@
+import React from 'react';
 import useCart from './Cart/useCart';
 
 function Cart() {
   const { products } = useCart();
+
+  const handlePlaceOrder = () => {
+
+  };
 
   return (
     <div>
@@ -15,6 +20,9 @@ function Cart() {
           </li>
         ))}
       </ul>
+      {products.length > 0 && (
+        <button onClick={handlePlaceOrder}>Realizar Pedido</button>
+      )}
     </div>
   );
 }

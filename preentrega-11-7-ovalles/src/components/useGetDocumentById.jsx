@@ -1,12 +1,10 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-
+import { getFirestore } from 'firebase/firestore'
 
 
 const getDocumentById = async (collectionName, documentId) => {
   try {
-    const db = firebase.firestore();
-    const docRef = db.collection(collectionName).doc(documentId);
+    const db = getFirestore();
+    const docRef = db.collection("items").doc(documentId);
     const docSnapshot = await docRef.get();
 
     if (docSnapshot.exists) {
